@@ -48,23 +48,21 @@ At the end of the process, the vehicle is able to drive autonomously around the 
 
 The final model architecture (model.py lines 48-67) consisted of a convolution neural network with the following layers and layer sizes:
 
-____________________
-|Layer (type)|Output Shape|Param #|Connected to|                     
-| - | :-: | -: |
+|Layer (type)|Output Shape|Param #|Connected to|   
+| --------   | -----:   | :----: | :---- |
 |cropping2d_1 (Cropping2D)| (None, 90, 320, 3)|0 | cropping2d_input_1[0][0]  |       
-|lambda_1 (Lambda)  |              (None, 90, 320, 3)  |  0          | cropping2d_1[0][0] |              
-|convolution2d_1 (Convolution2D) | (None, 43, 158, 24) |  1824      |  lambda_1[0][0]  |                 
+|lambda_1 (Lambda)  |              (None, 90, 320, 3)  |  0          | cropping2d_1[0][0] |      
+|convolution2d_1 (Convolution2D) | (None, 43, 158, 24) |  1824      |  lambda_1[0][0]  |     
 |convolution2d_2 (Convolution2D)  |(None, 20, 77, 36)  |  21636   |   convolution2d_1[0][0]   |  
-|convolution2d_3 (Convolution2D)|  (None, 8, 37, 48)   |  43248   |    convolution2d_2[0][0]  |   _
+|convolution2d_3 (Convolution2D)|  (None, 8, 37, 48)   |  43248   |    convolution2d_2[0][0]  |  
 |convolution2d_4 (Convolution2D) | (None, 6, 35, 64)   |  27712   |    convolution2d_3[0][0] |    
 |convolution2d_5 (Convolution2D) | (None, 4, 33, 64)   |  36928   |    convolution2d_4[0][0] |  
 |dropout_1 (Dropout)    |          (None, 4, 33, 64)   |  0       |    convolution2d_5[0][0]|    
 |flatten_1 (Flatten)      |        (None, 8448)     |     0        |   dropout_1[0][0]   |   
 |dense_1 (Dense)    |              (None, 100)   |        844900 |     flatten_1[0][0]   |  
 |dense_2 (Dense)    |              (None, 50)    |        5050   |     dense_1[0][0]     |
-|dense_3 (Dense)       |           (None, 10)  |          510     |    dense_2[0][0]     
+|dense_3 (Dense)       |           (None, 10)  |          510     |    dense_2[0][0]     |
 |dense_4 (Dense)     |             (None, 1)     |        11      |    dense_3[0][0]  |
-
 
 #### 3. Creation of the Training Set & Training Process
 

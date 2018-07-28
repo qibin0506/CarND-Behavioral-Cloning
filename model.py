@@ -7,7 +7,7 @@ from sklearn.utils import shuffle
 def generator(samples, batch_size=32):
     num_samples = len(samples)
     while 1:
-        shuffle(samples)
+        samples = shuffle(samples)
         for offset in range(0, num_samples, batch_size):
             batch_samples = samples[offset:offset+batch_size]
 
